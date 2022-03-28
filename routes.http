@@ -1,0 +1,66 @@
+#Get sightings in a location
+
+GET http://localhost:3000/sightings
+Content-Type: application/json
+
+{
+  "location": "L161180"
+}
+
+###
+
+#Find Locations in a State
+GET http://localhost:3000/locations
+Content-Type: application/json
+
+{
+  "state": "IL"
+}
+
+###
+#Get a list of hotspots in a region
+GET http://localhost:3000/hotspots/
+Content-Type: application/json
+
+{
+  "region": "US-IL-031"
+}
+
+###
+#historic data by hotspot
+
+GET http://localhost:3000/historic
+Content-Type: application/json
+
+{
+  "hotspot": "L161180",
+  "year": "2020",
+  "month": "04",
+  "day": "01"
+}
+
+###
+GET http://localhost:3000/time
+Content-Type: application/json
+
+{
+  "year": "2022",
+  "month": "03",
+  "day": "28",
+  "hour": "09",
+  "minute": "30",
+  "location": "US-IL-031"
+}
+
+###
+GET http://localhost:3000/historic-time
+Content-Type: application/json
+
+{
+  "hotspot": "L161180",
+  "year": "2022",
+  "month": "03",
+  "day": "28",
+  "hour": "09",
+  "minute": "30"
+}
