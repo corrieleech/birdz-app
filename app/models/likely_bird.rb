@@ -1,0 +1,2 @@
+class LikelyBird < ApplicationRecord
+end
