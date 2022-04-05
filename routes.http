@@ -14,7 +14,7 @@ GET http://localhost:3000/locations
 Content-Type: application/json
 
 {
-  "state": "WI"
+  "state": "IL"
 }
 
 ###
@@ -23,7 +23,7 @@ GET http://localhost:3000/hotspots/
 Content-Type: application/json
 
 {
-  "region": "US-WI-133"
+  "region": "US-IL-031"
 }
 
 ###
