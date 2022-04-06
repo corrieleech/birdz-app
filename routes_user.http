@@ -1,10 +1,12 @@
+@jwt = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE2NDkzNDk5MDJ9.xJcXtxW8PNKA76fEbukKKUDHe8ubsV0xcesTvirNSs4
+
 ### Users Create (signup)
 POST http://localhost:3000/users
 Content-Type: application/json
 
 {
-  "name": "Rick",
-  "email": "bigrick@gmail.com",
+  "name": "Test",
+  "email": "test@gmail.com",
   "password": "password",
   "password_confirmation": "password"
 }
@@ -17,3 +19,46 @@ Content-Type: application/json
   "email": "corrie@gmail.com",
   "password": "password"
 }
+
+### Users Show
+GET http://localhost:3000/users/3
+Content-Type: application/json
+Authorization: Bearer {{ jwt }}
+
+### Users Update
+PATCH http://localhost:3000/users/4
+Content-Type: application/json
+Authorization: Bearer {{ jwt }}
+
+{
+  "name": "testy",
+  "email": "testytest@gmail.com"
+}
+
+### Users Destroy
+DELETE http://localhost:3000/users/4
+Content-Type: application/json
+Authorization: Bearer {{ jwt }}
+
+###CHECKLISTS
+
+### Checklists Index
+
+GET http://localhost:3000/checklists
+
+### Checklists Create
+
+POST http://localhost:3000/checklists
+Content-Type: application/json
+Authorization: Bearer {{ jwt }}
+
+{
+  "name": "Lyndale Street Birds",
+  "locId": "TBD",
+  "time": "Wed, 06 Apr 2022 11:44:20"
+}
+
+### Checklist Show
+GET http://localhost:3000/checklists/3
+Content-Type: application/json
+Authorization: Bearer {{ jwt }}
