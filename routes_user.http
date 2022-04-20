@@ -1,4 +1,4 @@
-@jwt = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE2NDkzNDk5MDJ9.xJcXtxW8PNKA76fEbukKKUDHe8ubsV0xcesTvirNSs4
+@jwt = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE2NTA0ODY0ODN9.GV8jb-c-N2fTKgH8n2rFes4CZojKBWTeo0aDXFryCYE
 
 ### Users Create (signup)
 POST http://localhost:3000/users
@@ -21,7 +21,7 @@ Content-Type: application/json
 }
 
 ### Users Show
-GET http://localhost:3000/users/3
+GET http://localhost:3000/users/1
 Content-Type: application/json
 Authorization: Bearer {{ jwt }}
 
@@ -59,6 +59,55 @@ Authorization: Bearer {{ jwt }}
 }
 
 ### Checklist Show
-GET http://localhost:3000/checklists/3
+GET http://localhost:3000/checklists/4
 Content-Type: application/json
 Authorization: Bearer {{ jwt }}
+
+###Checklist Destroy
+
+DELETE http://localhost:3000/checklists/3
+Content-Type: application/json
+Authorization: Bearer {{ jwt }}
+
+###Likely_Birds Index
+
+GET http://localhost:3000/likely-birds
+Content-Type: application/json
+Authorization: Bearer {{ jwt }}
+
+{
+  "checklist_id": 1
+}
+
+###Likely_Birds Update
+
+PATCH http://localhost:3000/likely-birds/3
+Content-Type: application/json
+Authorization: Bearer {{ jwt }}
+
+###Locations Index - Get all locations in a state
+
+GET http://localhost:3000/locations
+Content-Type: application/json
+
+{
+  "state": "IL"
+}
+###Hotspots Index - Get hotspots in a location
+
+GET http://localhost:3000/hotspots
+Content-Type: application/json
+
+{
+  "region": "US-IL-031"
+}
+
+###Birds Index - Get List of birds a person has seen
+
+GET http://localhost:3000/birds/
+
+
+###Birds Show - Get Taxidermy for a bird
+
+GET http://localhost:3000/birds/gockin
+

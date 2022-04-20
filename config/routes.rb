@@ -11,14 +11,20 @@ Rails.application.routes.draw do
   get "/checklists/:id" => "checklists#show"
   delete "/checklists/:id" => "checklists#destroy"
 
+  get "/likely-birds" => "likely_birds#index"
+  patch "/likely-birds/:id" => "likely_birds#update"
+
+  get "/locations" => "locations#index"
+  get "/hotspots" => "hotspots#index"
+
+  get "/birds" => "birds#index"
+  get "/birds/:speciesCode" => "birds#show"
+
   #test routes, will be turned RESTful
   get "sightings" => "sightings#index"
-  get "locations" => "sightings#locations"
-  get "hotspots" => "sightings#hotspots"
   get "location" => "sightings#historic_montrose"
   get "time" => "sightings#sighting_time"
   get "historic" => "sightings#historic_data"
   get "historic-time" => "sightings#historic_time"
-  get "bird" => "sightings#bird_tax"
 
 end

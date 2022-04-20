@@ -26,20 +26,7 @@ Content-Type: application/json
   "region": "US-IL-031"
 }
 
-###
-#historic data by hotspot
-
-GET http://localhost:3000/historic
-Content-Type: application/json
-
-{
-  "hotspot": "L301097",
-  "year": "2021",
-  "month": "04",
-  "day": "01"
-}
-
-###
+### Gets all sightings within 2 hours of the entered time at a location
 GET http://localhost:3000/time
 Content-Type: application/json
 
@@ -47,26 +34,39 @@ Content-Type: application/json
   "year": "2021",
   "month": "04",
   "day": "01",
-  "hour": "09",
+  "hour": "14",
   "minute": "30",
-  "location": "US-IL-031"
+  "location": "L161180"
 }
 
 ###
+#Takes a user date and pulls all historic bird observation data for the week before and the week after
+
 GET http://localhost:3000/historic
 Content-Type: application/json
 
 {
-  "hotspot": "US-IL-031",
+  "hotspot": "L161180",
+  "year": "2021",
+  "month": "04",
+  "day": "01"
+}
+
+### takes a user date and pulls historic bird observation data for the week before and the week after, and SHOULD return sightings that occured within 1 hour before or after the entered time
+
+GET http://localhost:3000/historic-time
+Content-Type: application/json
+
+{
+  "hotspot": "L161180",
   "year": "2021",
   "month": "04",
   "day": "01",
-  "hour": "14",
+  "hour": "07",
   "minute": "00"
 }
 
 ###
-#Species data
 
 GET http://localhost:3000/bird
 Content-Type: application/json

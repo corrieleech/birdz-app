@@ -2,6 +2,7 @@ class ChecklistsController < ApplicationController
   before_action :authenticate_user, only: [:destroy]
 
   def index
+    current_user
     checklists = Checklist.all
     render json: checklists
   end
@@ -32,6 +33,8 @@ class ChecklistsController < ApplicationController
 
   def destroy
     checklist = Checklist.find(params[:id])
+    checklist.destroy
+    render json: {message: "Checklist deleted successfully."}
   end
 
 end
