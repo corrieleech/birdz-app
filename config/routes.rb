@@ -25,6 +25,6 @@ Rails.application.routes.draw do
   get "location" => "sightings#historic_montrose"
   get "time" => "sightings#sighting_time"
   get "historic" => "sightings#historic_data"
-  get "historic-time" => "sightings#historic_time"
+  get "possible-sightings" => "sightings#possible_sightings"
 
 end

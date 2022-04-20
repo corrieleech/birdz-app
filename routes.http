@@ -31,11 +31,11 @@ GET http://localhost:3000/time
 Content-Type: application/json
 
 {
-  "year": "2021",
+  "year": "2022",
   "month": "04",
-  "day": "01",
-  "hour": "14",
-  "minute": "30",
+  "day": "20",
+  "hour": "6",
+  "minute": "00",
   "location": "L161180"
 }
 
@@ -49,21 +49,21 @@ Content-Type: application/json
   "hotspot": "L161180",
   "year": "2021",
   "month": "04",
-  "day": "01"
+  "day": "8"
 }
 
-### takes a user date and pulls historic bird observation data for the week before and the week after, and SHOULD return sightings that occured within 1 hour before or after the entered time
+### takes a user date and pulls historic bird observation data for the week before and the week after, and returns sightings that occured within 1 hour before or after the entered time
 
-GET http://localhost:3000/historic-time
+GET http://localhost:3000/possible-sightings
 Content-Type: application/json
 
 {
   "hotspot": "L161180",
   "year": "2021",
   "month": "04",
-  "day": "01",
-  "hour": "07",
-  "minute": "00"
+  "day": "08",
+  "hour": "12",
+  "minute": "45"
 }
 
 ###
