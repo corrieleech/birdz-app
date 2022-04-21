@@ -27,7 +27,7 @@ class Checklist < ApplicationRecord
     possible_sightings.each do |bird|
       db_bird = Bird.find_by(speciesCode: bird["speciesCode"])
       if db_bird == nil
-        db_bird = Bird.create(speciesCode: bird["speciesCode"])
+        db_bird = Bird.create(speciesCode: bird["speciesCode"], comName: bird["comName"], sciName: bird["sciName"])
       end
       checklist_addition = LikelyBird.create(
         checklist_id: checklist_id,

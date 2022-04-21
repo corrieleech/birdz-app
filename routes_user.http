@@ -1,4 +1,4 @@
-@jwt = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE2NTA2MzgwNzd9.QsFSiEB3RTNCdLmq3a5fQSYlyF7fYxsZN8LBfrR5w1o
+@jwt = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjozLCJleHAiOjE2NTA2NDMyMTV9.zIrZmbipCaujWKC9kI1YJ_kIzDD6-oAaDycRvw7gYOY
 
 ### Users Create (signup)
 POST http://localhost:3000/users
@@ -16,7 +16,7 @@ POST http://localhost:3000/sessions
 Content-Type: application/json
 
 {
-  "email": "corrie@gmail.com",
+  "email": "bigrick@gmail.com",
   "password": "password"
 }
 
@@ -53,17 +53,17 @@ Content-Type: application/json
 Authorization: Bearer {{ jwt }}
 
 {
-  "name": "Morning December Montrose Walk",
-  "locId": "L161180",
+  "name": "Yuna Walks",
+  "locId": "L301097",
   "year": "2021",
-  "month": "12",
+  "month": "05",
   "day": "15",
-  "hour": "8",
+  "hour": "10",
   "minute": "45"
 }
 
 ### Checklist Show
-GET http://localhost:3000/checklists/5
+GET http://localhost:3000/checklists/28
 Content-Type: application/json
 Authorization: Bearer {{ jwt }}
 
@@ -80,7 +80,7 @@ Content-Type: application/json
 Authorization: Bearer {{ jwt }}
 
 {
-  "checklist_id": 1
+  "checklist_id": 28
 }
 
 ###Likely_Birds Update
@@ -95,7 +95,7 @@ GET http://localhost:3000/locations
 Content-Type: application/json
 
 {
-  "state": "IL"
+  "state": "WI"
 }
 ###Hotspots Index - Get hotspots in a location
 
@@ -103,10 +103,11 @@ GET http://localhost:3000/hotspots
 Content-Type: application/json
 
 {
-  "region": "US-IL-031"
+  "region": "US-WI-133"
 }
 
 ###Birds Index - Get List of birds a person has seen
+###NOT WORKING
 
 GET http://localhost:3000/birds/
 
