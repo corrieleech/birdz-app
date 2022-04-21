@@ -5,18 +5,6 @@ class LikelyBirdsController < ApplicationController
     render json: likely_birds
   end
 
-  def create
-    #birds_from_api = THIS IS WHERE API HIT GOES
-    
-    birds_from_api.each do
-  
-      bird = LikelyBird.new(
-        checklist_id: 1, 
-
-      )
-    end
-  end
-
   def update
     likely_bird = LikelyBird.find(params[:id])
     likely_bird.has_seen = !likely_bird.has_seen

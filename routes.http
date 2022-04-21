@@ -31,10 +31,10 @@ GET http://localhost:3000/time
 Content-Type: application/json
 
 {
-  "year": "2022",
+  "year": "2021",
   "month": "04",
   "day": "20",
-  "hour": "6",
+  "hour": "12",
   "minute": "00",
   "location": "L161180"
 }
@@ -67,10 +67,3 @@ Content-Type: application/json
 }
 
 ###
-
-GET http://localhost:3000/bird
-Content-Type: application/json
-
-{
-  "speciesCode": "gockin"
-}
