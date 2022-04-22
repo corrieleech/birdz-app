@@ -26,11 +26,12 @@ class ChecklistsController < ApplicationController
 
   def show
     checklist = Checklist.find(params[:id])
-    if current_user == checklist.user
-      render json: checklist
-    else
-      render json: {}, status: :unauthorized
-    end
+    render json: checklist
+    # if current_user == checklist.user
+    #   render json: checklist
+    # else
+    #   render json: {}, status: :unauthorized
+    # end
   end
 
   def destroy
