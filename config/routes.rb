@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   delete "/checklists/:id" => "checklists#destroy"
 
   get "/likely-birds" => "likely_birds#index"
+  post "/likely-birds" => "likely_birds#create"
   patch "/likely-birds/:id" => "likely_birds#update"
 
   get "/locations" => "locations#index"

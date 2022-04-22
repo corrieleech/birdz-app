@@ -22,20 +22,19 @@ class Checklist < ApplicationRecord
       end
       user_date += 1.days
     end
-    possible_sightings = possible_sightings.uniq
+    possible_sightings = possible_sightings.uniq { |sighting| sighting["speciesCode"]}
 
     possible_sightings.each do |bird|
       db_bird = Bird.find_by(speciesCode: bird["speciesCode"])
       if db_bird == nil
         db_bird = Bird.create(speciesCode: bird["speciesCode"], comName: bird["comName"], sciName: bird["sciName"])
-      end
+      end 
       checklist_addition = LikelyBird.create(
         checklist_id: checklist_id,
         bird_id: db_bird.id,
         has_seen: false
       )
     end
-
   end
 
 end

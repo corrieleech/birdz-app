@@ -3,4 +3,5 @@ class ChecklistSerializer < ActiveModel::Serializer
 
   belongs_to :user
   has_many :likely_birds
+
 end

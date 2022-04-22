@@ -4,7 +4,7 @@ GET http://localhost:3000/sightings
 Content-Type: application/json
 
 {
-  "location": "L161180"
+  "location": "L9875076"
 }
 
 ###
@@ -14,7 +14,7 @@ GET http://localhost:3000/locations
 Content-Type: application/json
 
 {
-  "state": "IL"
+  "state": "WI"
 }
 
 ###
@@ -23,7 +23,7 @@ GET http://localhost:3000/hotspots/
 Content-Type: application/json
 
 {
-  "region": "US-IL-031"
+  "region": "US-WI-047"
 }
 
 ### Gets all sightings within 2 hours of the entered time at a location
@@ -34,9 +34,9 @@ Content-Type: application/json
   "year": "2021",
   "month": "04",
   "day": "20",
-  "hour": "14",
+  "hour": "16",
   "minute": "00",
-  "location": "L161180"
+  "location": "US-WI-047"
 }
 
 ###
@@ -46,7 +46,7 @@ GET http://localhost:3000/historic
 Content-Type: application/json
 
 {
-  "hotspot": "L161180",
+  "hotspot": "US-WI-047",
   "year": "2021",
   "month": "04",
   "day": "8"
@@ -58,7 +58,7 @@ GET http://localhost:3000/possible-sightings
 Content-Type: application/json
 
 {
-  "hotspot": "L161180",
+  "hotspot": "US-WI-047",
   "year": "2021",
   "month": "04",
   "day": "08",
