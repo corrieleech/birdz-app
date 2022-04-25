@@ -38,10 +38,8 @@ class Checklist < ApplicationRecord
     end
   end
 
-  def sorted_abc
-    checklist_birds = LikelyBird.where(checklist_id: self.id)
-    checklist_birds.sort {|bird1, bird2| bird1.bird_name <=> bird2.bird_name }
-    checklist_birds
+  def simple_date
+    simple_date = self.time.strftime("%B %e, %l:%M %p")
   end
 
 end
