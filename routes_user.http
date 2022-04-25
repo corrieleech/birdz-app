@@ -1,4 +1,4 @@
-@jwt = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE2NTA3MjkwMTh9.gWDsVIhBv1NS1lc2E3-ZXb_RcoAFx2-aHdo4YYbW5Hg
+@jwt = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE2NTA5ODg2ODh9.-xs0GndzZPUCmqlFi1SZ-QvRdakqHrKHu3dEUxAb6JY
 #Corrie
 
 ### Users Create (signup)
@@ -54,17 +54,17 @@ Content-Type: application/json
 Authorization: Bearer {{ jwt }}
 
 {
-  "name": "Cubs Fan Birdz",
-  "locId": "L9875076",
+  "name": "Spring Walk with Jobi",
+  "locId": "L161180",
   "year": "2021",
-  "month": "07",
+  "month": "03",
   "day": "15",
-  "hour": "14",
+  "hour": "07",
   "minute": "00"
 }
 
 ### Checklist Show
-GET http://localhost:3000/checklists/1
+GET http://localhost:3000/checklists/6
 Content-Type: application/json
 Authorization: Bearer {{ jwt }}
 

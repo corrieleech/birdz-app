@@ -1,6 +1,6 @@
 class Checklist < ApplicationRecord
   belongs_to :user
-  has_many :likely_birds
+  has_many :likely_birds, -> { order "id" }
   has_many :birds, through: :likely_birds
   
   validates :name, length: { minimum: 2 }
@@ -23,6 +23,7 @@ class Checklist < ApplicationRecord
       user_date += 1.days
     end
     possible_sightings = possible_sightings.uniq { |sighting| sighting["speciesCode"]}
+    possible_sightings.sort! { |sighting1, sighting2 | sighting1["comName"] <=> sighting2["comName"]}
 
     possible_sightings.each do |bird|
       db_bird = Bird.find_by(speciesCode: bird["speciesCode"])
@@ -35,6 +36,12 @@ class Checklist < ApplicationRecord
         has_seen: false
       )
     end
+  end
+
+  def sorted_abc
+    checklist_birds = LikelyBird.where(checklist_id: self.id)
+    checklist_birds.sort {|bird1, bird2| bird1.bird_name <=> bird2.bird_name }
+    checklist_birds
   end
 
 end
