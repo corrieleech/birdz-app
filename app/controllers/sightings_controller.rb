@@ -5,6 +5,11 @@ class SightingsController < ApplicationController
     render json: sightings
   end
 
+  def location_details
+    hotspot = HTTP.headers("x-ebirdapitoken" => Rails.application.credentials.ebird.api_key).get("https://api.ebird.org/v2/ref/hotspot/info/#{params[:locId]}").parse(:json)
+    render json: location_details
+  end
+
   def location
     historic = HTTP.headers("x-ebirdapitoken" => Rails.application.credentials.ebird.api_key).get("https://api.ebird.org/v2/data/obs/#{params[:hotspot]}/historic/#{params[:year]}/#{params[:month]}/#{params[:day]}/").parse(:json)
     render json: historic

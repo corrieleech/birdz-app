@@ -46,6 +46,10 @@ group :development do
   # gem "spring"
 end
 
+group :development, :test do
+  gem 'rspec-rails', ">= 3.9.0"
+end
+
 gem "http"
 
 gem "jwt"
