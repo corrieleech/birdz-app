@@ -1,4 +1,4 @@
-@jwt = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE2NTA5ODg2ODh9.-xs0GndzZPUCmqlFi1SZ-QvRdakqHrKHu3dEUxAb6JY
+@jwt = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE2NTM0OTYyNzF9.T0vf6NGxUn3ENYSgbrpdWfeQseTyLZDERbeBFkmdFYM
 #Corrie
 
 ### Users Create (signup)
@@ -22,12 +22,12 @@ Content-Type: application/json
 }
 
 ### Users Show
-GET http://localhost:3000/users/3
+GET http://localhost:3000/users/1
 Content-Type: application/json
 Authorization: Bearer {{ jwt }}
 
 ### Users Update
-PATCH http://localhost:3000/users/4
+PATCH http://localhost:3000/users/2
 Content-Type: application/json
 Authorization: Bearer {{ jwt }}
 

@@ -2,7 +2,6 @@ class ChecklistsController < ApplicationController
   before_action :authenticate_user, only: [:destroy]
 
   def index
-    current_user
     checklists = Checklist.all
     render json: checklists
   end
@@ -26,12 +25,11 @@ class ChecklistsController < ApplicationController
 
   def show
     checklist = Checklist.find(params[:id])
-    render json: checklist
-    # if current_user == checklist.user
-    #   render json: checklist
-    # else
-    #   render json: {}, status: :unauthorized
-    # end
+    if current_user && checklist.user == current_user
+      render json: checklist
+    else
+      render json: {}, status: :unauthorized
+    end
   end
 
   def destroy
