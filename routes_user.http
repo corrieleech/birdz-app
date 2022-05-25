@@ -70,7 +70,7 @@ Authorization: Bearer {{ jwt }}
 
 ###Checklist Destroy
 
-DELETE http://localhost:3000/checklists/3
+DELETE http://localhost:3000/checklists/2
 Content-Type: application/json
 Authorization: Bearer {{ jwt }}
 
