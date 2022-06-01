@@ -8,12 +8,11 @@ class ChecklistsController < ApplicationController
 
   def create
     id = current_user.id
-    time = DateTime.new(params[:year].to_i, params[:month].to_i, params[:day].to_i, params[:hour].to_i, params[:minute].to_i)
     checklist = Checklist.new(
       user_id: id,
       name: params[:name],
       locId: params[:locId],
-      time: time
+      time: params[:time]
     )
     if checklist.save
       checklist.populate_possible_birds
